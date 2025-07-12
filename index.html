@@ -7,7 +7,7 @@
 </head>
 <body>
    
-   <header>
+  <header>
       <div class="main-conatiner-lg">
           <h1 class="heading">Employee Directory</h1>
           <input type="text" id="searchBar" placeholder="Search by name or email"  class="search-input"/>
@@ -44,7 +44,7 @@
             </label>
         </div>
     </div>
-    <button id="addEmployee" class="add-employee-btn" onclick="window.location.href='add-edit.html'">Add Employee</button>
+    <button id="addEmployee" class="add-employee-btn" onclick="toggleFormView()">Add Employee</button>
   </div>
 
   <section id="filters" class="hidden">
@@ -59,8 +59,43 @@
     </div>
   </section>
 
-  <main id="employeeList"></main>
 
+  <main id="employeeListView">
+    <div id="employeeList"></div>
+  </main>
+
+  
+
+  <main id="employeeFormView" class="hidden">
+    <h1 id="formTitle">Add Employee</h1>
+    <form id="employeeForm" novalidate>
+      <input type="hidden" id="empId" />
+      <label>
+        First Name
+        <input type="text" id="firstName" placeholder="First Name" required />
+      </label>
+      <label>
+        Last Name
+        <input type="text" id="lastName" placeholder="Last Name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" id="email" placeholder="Email" required />
+      </label>
+      <label>
+        Department
+        <input type="text" id="department" placeholder="Department" required />
+      </label>
+      <label>
+        Role
+        <input type="text" id="role" placeholder="Role" required />
+      </label>
+      <div class="form-actions">
+        <button type="button" onclick="cancelForm()">Cancel</button>
+        <button type="submit" id="submitBtn">Add</button>
+      </div>
+    </form>
+  </main>
   <footer>
      <div class="footer-card">
             <p class="footer-para">@ 2025 Empolyee Directory App. All rights reserved</p>
@@ -94,6 +129,5 @@
       toggleFormView(emp);
     }
 </script>
-  
 </body>
 </html>
