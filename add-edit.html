@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Add / Edit Employee</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+   
+  <h1 id="formTitle">Add Employee</h1>
+  <form id="employeeForm" novalidate >
+    <input type="hidden" id="empId" />
+    <label>
+      First Name
+      <input type="text" id="firstName" placeholder="First Name" required />
+    </label>
+    <label>
+      Last Name
+      <input type="text" id="lastName" placeholder="Last Name" required />
+    </label>
+    <label>
+      Email
+      <input type="email" id="email" placeholder="Email" required />
+    </label>
+    <label>
+      Department
+      <input type="text" id="department" placeholder="Department" required />
+    </label>
+    <label>
+      Role
+      <input type="text" id="role" placeholder="Role" required />
+    </label>
+    <div class="form-actions">
+      <button type="button" onclick="window.location.href='index.html'">Cancel</button>
+      <button type="submit" id="submitBtn">Add</button>
+    </div>
+  </form>
+   
+  <script src="scripts/data.js"></script>
+  <script src="scripts/form.js"></script>
+</body>
+</html>

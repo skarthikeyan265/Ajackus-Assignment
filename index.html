@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+   
+  <header>
+      <div class="main-conatiner-lg">
+          <h1 class="heading">Employee Directory</h1>
+          <input type="text" id="searchBar" placeholder="Search by name or email"  class="search-input"/>
+          <button class="filter-btn" onclick="filterPopup()">Filter</button>
+      </div>
+      <div class="main-conatiner-sm">
+          <h1 class="heading">Employee Directory</h1>
+          <div class="header-sm-card">
+              <input type="text" id="searchBar" placeholder="Search by name or email"  class="search-input"/>
+              <button class="filter-btn" onclick="filterPopup()">Filter</button>
+          </div>
+      </div>
+  </header>
+  <div class="card-2">
+    <div class="select-card">
+        <div>
+            <label >Sort:
+              <select id="sort">
+                  <option value="">Select</option>
+                  <option value="First Name">First Name</option>
+                  <option value="Department">Department</option>
+                  <option value="Role">Role</option>
+              </select>
+            </label>
+        </div>
+        <div>
+            <label>Show:
+              <select id="paginationSize" onchange="changePageSize(this.value)">
+                <option>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+              </select>
+            </label>
+        </div>
+    </div>
+    <button id="addEmployee" class="add-employee-btn" onclick="window.location.href='add-edit.html'">Add Employee</button>
+  </div>
+
+  <section id="filters" class="hidden">
+    <div class="filter-card">
+      <label>First Name:<input type="text" id="filterName" placeholder="First Name" /></label>
+      <label>Department:<input type="text" id="filterDepartment" placeholder="Department" /></label>
+      <label>Role:<input type="text" id="filterRole" placeholder="Role" /></label>
+      <div class="filter-btn-card">
+        <button onclick="applyFilters()" class="filter-apply-btn">Apply</button>
+        <button onclick="resetFilters()">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <main id="employeeList"></main>
+
+  <footer>
+     <div class="footer-card">
+            <p class="footer-para">@ 2025 Empolyee Directory App. All rights reserved</p>
+        </div>
+  </footer>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
