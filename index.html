@@ -70,5 +70,30 @@
   <script src="scripts/data.js"></script>
   <script src="scripts/utils.js"></script>
   <script src="scripts/main.js"></script>
+  <script src="scripts/form.js"></script>
+  <script>
+    function toggleFormView(editData = null) {
+      document.getElementById("employeeListView").classList.add("hidden");
+      document.getElementById("employeeFormView").classList.remove("hidden");
+
+      document.getElementById("formTitle").textContent = editData ? "Edit Employee" : "Add Employee";
+      document.getElementById("submitBtn").textContent = editData ? "Save" : "Add";
+
+      ["empId", "firstName", "lastName", "email", "department", "role"].forEach(id => {
+        document.getElementById(id).value = editData ? editData[id] || "" : "";
+      });
+    }
+
+    function cancelForm() {
+      document.getElementById("employeeFormView").classList.add("hidden");
+      document.getElementById("employeeListView").classList.remove("hidden");
+    }
+
+    function editEmployee(id) {
+      const emp = employeeData.find(e => e.id === id);
+      toggleFormView(emp);
+    }
+</script>
+  
 </body>
 </html>
